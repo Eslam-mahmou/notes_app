@@ -29,8 +29,8 @@ final Icon icon;
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color:const Color(0xff606060).withOpacity(.2)
+        borderRadius: BorderRadius.circular(12),
+        color:const Color(0xff606060).withOpacity(.3)
       ),
       height: 45,
       width: 45,

@@ -13,7 +13,7 @@ class CustomListView extends StatelessWidget {
       itemBuilder: ((context, index) {
   
       return const Padding(
-        padding:  EdgeInsets.only(bottom: 10),
+        padding:  EdgeInsets.only(bottom: 8),
         child:  CustomListTile(),
       );
     }));
