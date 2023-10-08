@@ -10,12 +10,12 @@ final Icon icon;
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(text,
-        style: TextStyle(
+        style:const TextStyle(
           fontSize: 25
         ),),
        
         CustomIcon(
-          icon:icon ,
+          icon: icon,
         ),
       ],
     );
