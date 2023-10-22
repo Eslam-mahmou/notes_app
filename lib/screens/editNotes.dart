@@ -5,6 +5,9 @@ import 'package:notes_app_test/components/CustomTextField.dart';
 class EditNote extends StatelessWidget {
   const EditNote({super.key});
 
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +22,11 @@ class EditNote extends StatelessWidget {
           SizedBox(
             height: 40,
           ),
-          CustomTextField(labelText: 'Title', text: 'Title', maxLines: 1),
+          CustomTextField(
+           
+          
+         
+            labelText: 'Title', text: 'Title', maxLines: 1),
          SizedBox(
             height: 20,
           ), 
