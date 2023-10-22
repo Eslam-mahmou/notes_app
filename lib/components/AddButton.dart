@@ -14,7 +14,7 @@ class AddButton extends StatelessWidget {
  
         ),
         minimumSize: Size(MediaQuery.of(context).size.width,
-         MediaQuery.of(context).size.height),
+        45),
       ),
      onPressed: (){
     
