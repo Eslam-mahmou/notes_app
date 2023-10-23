@@ -11,7 +11,12 @@ class HomePage extends StatelessWidget {
     floatingActionButton: FloatingActionButton(onPressed: (){
     showModalBottomSheet(
       
-      context: context, builder: (context){
+      context: context, 
+      isScrollControlled: true,
+      builder: 
+      
+      (context){
+        
       return const AddNote();
     },
     shape:RoundedRectangleBorder(

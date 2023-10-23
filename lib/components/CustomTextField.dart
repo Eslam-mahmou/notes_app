@@ -11,7 +11,7 @@ final void Function(String?)? onSaved;
     return TextFormField(
         onSaved:onSaved ,
          validator: (value) {
-           if(value ==Null){
+           if(value!.isEmpty){
             return 'field is required';
            }
          },
@@ -27,6 +27,12 @@ final void Function(String?)? onSaved;
     label: Text(labelText),
   labelStyle:const TextStyle(
     color: kColor
+  ),
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(10),
+      borderSide:const BorderSide(
+        color:kColor
+      )
   ),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10),

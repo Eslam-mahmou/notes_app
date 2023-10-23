@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:notes_app_test/models/notes_models.dart';
 
 import 'AddButton.dart';
 import 'CustomTextField.dart';
@@ -12,8 +13,8 @@ class AddNoteForm extends StatefulWidget {
 }
 
 class _AddNoteFormState extends State<AddNoteForm> {
- String? title,subtitle,date;
-int? color;
+ String? title,subtitle;
+
   GlobalKey <FormState> formKey=GlobalKey();
   AutovalidateMode autovalidateMode=AutovalidateMode.disabled;
   @override
@@ -26,7 +27,7 @@ int? color;
           child: Column(
             children: [
             const  SizedBox(
-                height: 25,
+                height: 20,
               ),
              CustomTextField(
               onSaved: (value){
@@ -34,7 +35,7 @@ int? color;
               },
               labelText: 'Title', text: 'Title', maxLines: 1),
              const  SizedBox(
-                height: 16,
+                height: 10,
               ),
                CustomTextField(
                 onSaved: (value){
@@ -42,10 +43,10 @@ int? color;
                 },
                 labelText: 'Content', text: 'Content', maxLines: 6),
         const     SizedBox(
-              height: 20,
+              height: 16,
              ),
        const      SizedBox(
-              height: 70,
+              height: 60,
               child: ColorsListView()),
           const   SizedBox(
               height: 50,
@@ -53,10 +54,14 @@ int? color;
             AddButton(
               onPressed: (){
                 if(formKey.currentState!.validate()){
-          
-                  
-                  formKey.currentState!.save();
-                  
+               formKey.currentState!.save();
+                  var note =NotesModels(color:Colors.blue.value,
+                   date: DateTime.now().toString(), 
+                   subtitle: subtitle!, 
+                   title: title!);
+               
+                }else{
+                  autovalidateMode=AutovalidateMode.always;
                 }
                 
               },
