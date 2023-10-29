@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app_test/models/notes_models.dart';
 import 'package:notes_app_test/screens/editNotes.dart';
 
 class CustomListTile extends StatelessWidget {
-  const CustomListTile({super.key});
-
+  const CustomListTile({super.key,required this.note});
+final NotesModels note;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -22,9 +23,9 @@ return const EditNote();
           
           children: [
             ListTile(
-              title:const Text(
-                'Flutter Tips',
-                style: TextStyle(
+              title: Text(
+                note.title,
+                style:const TextStyle(
                   color: Colors.black,
                   fontSize: 26,
                 ),
@@ -37,7 +38,7 @@ return const EditNote();
             
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 24,bottom: 22),
-                child: Text('Create the project by eslam mahmoud',
+                child: Text(note.subtitle,
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.black.withOpacity(.4)
@@ -49,7 +50,7 @@ return const EditNote();
               children: [
                 Padding(
                   padding: const EdgeInsets.only(right: 22),
-                  child: Text('25/5/2023',
+                  child: Text(note.date,
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.black.withOpacity(.4)
